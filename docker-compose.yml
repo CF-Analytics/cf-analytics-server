@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  cf-analytics:
+    container_name: cf-analytics
+    image: feassh/cf-analytics:latest
+    ports:
+      - "4000:4000"
+    environment:
+      # * 必填：Cloudflare API Token（登录官网 -> 右上角 "个人简介" -> 配置文件 -> API 令牌 -> 创建令牌 -> 使用模板: "阅读分析数据和日志"）
+      - CLOUDFLARE_API_TOKEN=
+      # * 必填：Cloudflare 区域 ID（可配置多个，用英文逗号分割: ","）
+      - CLOUDFLARE_ZONE_ID=
+      # 可选：指定时区（无特殊需求的话，就保持默认即可）
+      - CFA_TIME_LOCATION=Asia/Shanghai
+      # 可选：从 "@BotFather" 获取的 Telegram 机器人令牌（令牌格式类似：123456789:ABCDEF1234567890abcdef1234567890）
+      - TG_BOT_TOKEN=
+      # 可选：Telegram 管理员聊天 ID（可通过 @userinfobot 获取）
+      - TG_USER_CHAT_ID=
+    restart: "always"
