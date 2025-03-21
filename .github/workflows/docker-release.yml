@@ -39,7 +39,7 @@ jobs:
       # 4️⃣ 编译 Golang 二进制文件
       - name: Build Go Application
         run: |
-          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} CGO_ENABLED=0 go build -o app-${{ matrix.os }}-${{ matrix.arch }}
+          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} CGO_ENABLED=0 go build -o cf-analytics-${{ matrix.os }}-${{ matrix.arch }}
 
       # 5️⃣ 上传二进制文件到 GitHub Release
       - name: Upload Release Asset
