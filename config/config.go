@@ -9,6 +9,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	_ "time/tzdata"
 )
 
 const CloudflareGraphQLEndpoint = "https://api.cloudflare.com/client/v4/graphql"
